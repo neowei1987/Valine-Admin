@@ -38,7 +38,7 @@ app.get('/', function(req, res) {
     if (req.currentUser) {
         res.redirect('/comments');
     } else {
-        res.render('index'{
+        res.render('index',{
             myrnd: rnd_ts
         });
     }

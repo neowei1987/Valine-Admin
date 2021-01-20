@@ -48,7 +48,7 @@ app.get('/', function(req, res) {
 app.use('/comments', require('./routes/comments'));
 
 // 处理登录请求（可能来自登录界面中的表单）
-app.post('/login', function(req, res) {
+app.post('/login/:rnd', function(req, res) {
     if (req.body.username == process.env.SMTP_USER 
         || req.body.username == process.env.TO_EMAIL) {
 

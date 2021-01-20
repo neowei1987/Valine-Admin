@@ -6,6 +6,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var AV = require('leanengine');
+var rnd_ts = new Date().getTime()；
 
 // 加载云函数定义，你可以将云函数拆分到多个文件方便管理，但需要在主文件中加载它们
 require('./cloud');
@@ -37,7 +38,9 @@ app.get('/', function(req, res) {
     if (req.currentUser) {
         res.redirect('/comments');
     } else {
-        res.render('index');
+        res.render('index'{
+            myrnd: rnd_ts
+        });
     }
 });
 
